@@ -9,7 +9,7 @@
       </nav>
     </div>
   </header>
-  <main class="mdl-layout__content" style="padding: 20px;">
-
+  <main class="mdl-layout__content" style="padding: 20px;" *ngIf="stocks">
+    <summary [stock]="stocks[0]"></summary>
   </main>
 </div>
