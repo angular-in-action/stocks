@@ -4,12 +4,12 @@
       <span class="mdl-layout-title">Stock Tracker</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link">Dashboard</a>
-        <a class="mdl-navigation__link">Manage</a>
+        <a class="mdl-navigation__link" [routerLink]="['/']">Dashboard</a>
+        <a class="mdl-navigation__link" [routerLink]="['/manage']">Manage</a>
       </nav>
     </div>
   </header>
   <main class="mdl-layout__content" style="padding: 20px;">
-    <manage></manage>
+    <router-outlet></router-outlet>
   </main>
 </div>
