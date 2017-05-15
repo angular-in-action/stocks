@@ -35,4 +35,8 @@ export class StocksService {
       return this.http.get(service + '/stocks/snapshot?symbols=' + symbols.join());
     }
   }
+
+  getNewsSnapshot(source = 'the-wall-street-journal') {
+    return this.http.get(service + '/stocks/news/snapshot?source=' + source);
+  }
 }
