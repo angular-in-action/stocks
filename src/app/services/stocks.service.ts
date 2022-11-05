@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
-let service: string = 'http://localhost:3000';
-
 export interface StockInterface {
   symbol: string;
   lastTradePriceOnly: number;
@@ -14,23 +11,26 @@ export interface StockInterface {
 @Injectable()
 export class StocksService {
 
+  private stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
+  private service: string = 'http://localhost:3000';
+
   constructor(private http: HttpClient) {}
 
   get() {
-    return stocks;
+    return this.stocks;
   }
 
   add(stock: string) {
-    stocks.push(stock);
+    this.stocks.push(stock);
     return this.get();
   }
 
   remove(stock: string) {
-    stocks.splice(stocks.indexOf(stock), 1);
+    this.stocks.splice(this.stocks.indexOf(stock), 1);
     return this.get();
   }
 
   load(symbols: string[]) {
-    return this.http.get<Array<StockInterface>>(service + '/stocks/snapshot?symbols=' + symbols.join());
+    return this.http.get<Array<StockInterface>>(this.service + '/stocks/snapshot?symbols=' + symbols.join());
   }
 }
