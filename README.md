@@ -1,3 +1,12 @@
+# Updated for Angular 15
+
+This branch has been updated for Angular 15. The changes are minimal to make it compatible, and are all focused on changes for TypeScript and not changes to Angular itself. If you need the original version, you can use the `master` branch.
+
+Node: Version 18
+Angular: 15
+
+It also is designed to use a local API instead of the remote service originally published on Heroku. Heroku is removing their free hosting service, and it would cost a lot of money to run (hundreds a year), so you'll want to run it locally. Instructions can be found at https://github.com/angular-in-action/api.
+
 # Stocks
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0-rc.1.
